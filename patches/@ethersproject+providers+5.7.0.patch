@@ -1,0 +1,39 @@
+diff --git a/node_modules/@ethersproject/providers/lib.esm/etherscan-provider.js b/node_modules/@ethersproject/providers/lib.esm/etherscan-provider.js
+index b28541b..d121f38 100644
+--- a/node_modules/@ethersproject/providers/lib.esm/etherscan-provider.js
++++ b/node_modules/@ethersproject/providers/lib.esm/etherscan-provider.js
+@@ -177,6 +177,8 @@ export class EtherscanProvider extends BaseProvider {
+                 return "https:/\/api-optimistic.etherscan.io";
+             case "optimism-kovan":
+                 return "https:/\/api-kovan-optimistic.etherscan.io";
++            case "matic":
++                return "https:/\/api.polygonscan.com";
+             default:
+         }
+         return logger.throwArgumentError("unsupported network", "network", this.network.name);
+diff --git a/node_modules/@ethersproject/providers/lib/etherscan-provider.js b/node_modules/@ethersproject/providers/lib/etherscan-provider.js
+index f519991..d87a7ea 100644
+--- a/node_modules/@ethersproject/providers/lib/etherscan-provider.js
++++ b/node_modules/@ethersproject/providers/lib/etherscan-provider.js
+@@ -232,6 +232,8 @@ var EtherscanProvider = /** @class */ (function (_super) {
+                 return "https:/\/api-optimistic.etherscan.io";
+             case "optimism-kovan":
+                 return "https:/\/api-kovan-optimistic.etherscan.io";
++            case "matic":
++                return "https:/\/api.polygonscan.com";
+             default:
+         }
+         return logger.throwArgumentError("unsupported network", "network", this.network.name);
+diff --git a/node_modules/@ethersproject/providers/src.ts/etherscan-provider.ts b/node_modules/@ethersproject/providers/src.ts/etherscan-provider.ts
+index add4097..9f5d07b 100644
+--- a/node_modules/@ethersproject/providers/src.ts/etherscan-provider.ts
++++ b/node_modules/@ethersproject/providers/src.ts/etherscan-provider.ts
+@@ -183,6 +183,8 @@ export class EtherscanProvider extends BaseProvider{
+                 return "https:/\/api-optimistic.etherscan.io";
+             case "optimism-kovan":
+                 return "https:/\/api-kovan-optimistic.etherscan.io";
++            case "matic":
++                return "https:/\/api.polygonscan.com";
+             default:
+         }
+ 
