@@ -4,12 +4,15 @@
   "main": "sweep.js",
   "author": "Leonid Meleshin <hello@leon0399.ru>",
   "license": "MIT",
+  "scripts": {
+    "postinstall": "patch-package"
+  },
   "dependencies": {
-    "cli-progress": "^3.11.2",
     "commander": "^9.4.0",
     "ethers": "^5.7.0",
     "patch-package": "^6.4.7",
-    "postinstall-postinstall": "^2.1.0"
+    "postinstall-postinstall": "^2.1.0",
+    "progress": "^2.0.3"
   },
   "type": "module"
 }
