@@ -16,6 +16,17 @@ program
     // .version(pkg.version)
 
 program
+    .option('--infura <key>',    'Infura API key')
+    .option('--etherscan <key>', 'Etherscan API key')
+
+program
+    .option('-A, --all',     'Sweep all assets')
+    .option('-E, --eth',     'Sweep ETH')
+    .option('-T, --erc20',   'Sweep ERC20 tokens')
+    .option('-N, --erc721',  'Sweep ERC721 NFTs')
+    .option('-M, --erc1155', 'Sweep ERC1155 tokens')
+
+program
     .option('--mnemonic <phrace>', 'wallet mnemonic phrase', (mnemonic) => {
         mnemonic = mnemonic.trim()
 
@@ -26,10 +37,8 @@ program
         return mnemonic
     })
     .option('-a, --to-address <address>', 'send all funds to this address', getAddress)
-    .option('-G, --gas <gas>', 'gas price')
-    .option('-n, --network <network>', 'Ethereum network to use', getNetwork, 1)
-    .option('--infura <key>', 'Infura API key')
-    .option('--etherscan <key>', 'Etherscan API key')
+    .option('-G, --gas <gas>',            'gas price')
+    .option('-n, --network <network>',    'Ethereum network to use', getNetwork, 1)
 
 program.parse()
 
